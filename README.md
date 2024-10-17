@@ -67,4 +67,4 @@ python hybridnet.py
 ```
 
 ## Results
-![alt_text](https://github.com/krishnapriya-nynaru/FreeSpace-SegmentationModel/blob/main/FreeSpace_Segmentation_Model/outputs/output.mp4)
+[Watch Demo Video](https://github.com/krishnapriya-nynaru/FreeSpace-SegmentationModel/blob/main/FreeSpace_Segmentation_Model/outputs/output.mp4)
