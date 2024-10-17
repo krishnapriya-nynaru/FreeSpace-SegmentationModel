@@ -37,7 +37,7 @@ It enhances object detection, segmentation, and lane detection by merging featur
 
 **Output :** HybridNets outputs segmentation maps for drivable areas, lane markings, and bounding boxes for detected objects. This combination is especially useful in real-time applications like autonomous driving, where multiple tasks are handled simultaneously in a single forward pass.
 
-![alt text](image.png)
+![alt text](https://github.com/krishnapriya-nynaru/FreeSpace-SegmentationModel/blob/main/FreeSpace_Segmentation_Model/images/image.png)
 ## Features
 - **Multitask Learning**: Utilizes the HybridNets architecture for simultaneous road segmentation and free space detection.
 - **High Precision**: Achieves state-of-the-art performance in free space segmentation through advanced neural network techniques.
