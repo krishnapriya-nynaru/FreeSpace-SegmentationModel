@@ -12,6 +12,9 @@ In an era where smart mobility and automation are at the forefront of technologi
 - [Installation](#installation)
 - [Usage](#usage)
 - [Model Inference](#model-inference)
+- [Results](#results)
+- [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
 
 ## Model Architecture
 The HybridNets model architecture is designed for multitask automotive applications, integrating EfficientNet-B0 as the backbone for feature extraction. It employs a BiFPN (Bidirectional Feature Pyramid Network) to combine features from different scales, enhancing both detection and segmentation. 
@@ -38,15 +41,13 @@ It enhances object detection, segmentation, and lane detection by merging featur
 **Output :** HybridNets outputs segmentation maps for drivable areas, lane markings, and bounding boxes for detected objects. This combination is especially useful in real-time applications like autonomous driving, where multiple tasks are handled simultaneously in a single forward pass.
 
 ![alt text](https://github.com/krishnapriya-nynaru/FreeSpace-SegmentationModel/blob/main/FreeSpace_Segmentation_Model/images/image.png)
+
+To obtain the ONNX model for HybridNets, you can download it from Pinto's Model Zoo repository [**here**](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/276_HybridNets) include from here get onnx model. This repository contains pre-converted ONNX models along with scripts for optimizing and running them on different platforms. The page includes instructions on how to use the model and detailed files for deployment.
 ## Features
 - **Multitask Learning**: Utilizes the HybridNets architecture for simultaneous road segmentation and free space detection.
 - **High Precision**: Achieves state-of-the-art performance in free space segmentation through advanced neural network techniques.
 - **ONNX Compatibility**: Provides a streamlined workflow for deployment on various platforms using the ONNX format.
 - **Real-time Processing**: Capable of processing video streams for dynamic environments.
-
-##
-
-To obtain the ONNX model for HybridNets, you can download it from Pinto's Model Zoo repository [**here**](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/276_HybridNets) include from here get onnx model. This repository contains pre-converted ONNX models along with scripts for optimizing and running them on different platforms. The page includes instructions on how to use the model and detailed files for deployment.
 
 For direct access, navigate to the ONNX folder in the provided repository link, where you'll find the model ready for use.
 ## Installation
@@ -65,6 +66,33 @@ Run the script with Python
 ```bash
 python hybridnet.py
 ```
+## Model Inference
+The model processes input images as follows:
+**Preprocessing :** Input images are resized to 512x384 and normalized using the ImageNet mean and standard deviation values:
+
+Mean: [0.485, 0.456, 0.406]
+
+Standard Deviation: [0.229, 0.224, 0.225]
+
+**Inference :** The preprocessed images are passed through the HybridNets model, which outputs the segmentation map.
+
+**Postprocessing :** The segmentation map is generated, where each pixel is classified into a segment (e.g., drivable area, free space). The segmentation overlay is then applied to the original image for visualization.
+
+**Display and Save :** The segmented images are displayed in a window and saved as an output video.
 
 ## Results
 ![alt_text](https://github.com/krishnapriya-nynaru/FreeSpace-SegmentationModel/blob/main/FreeSpace_Segmentation_Model/outputs/out.gif)
+
+## Contributing
+Contributions are welcome! Please adhere to the following guidelines:
+
+Fork the repository and create a new branch.
+Make your changes and ensure your code passes all tests.
+Submit a pull request with a clear description of your changes.
+If you have any suggestions for improvements, feel free to open an issue!
+
+## Acknowledgments
+
+- [**OpenCV for computer vision functionalities.**](https://opencv.org/)
+- [**ONNX Runtime for efficient model inference.**](https://onnxruntime.ai/)
+- [**HybridNets for providing the multitask architecture.**](https://github.com/datvuthanh/HybridNets)
