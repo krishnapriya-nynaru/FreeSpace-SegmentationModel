@@ -48,11 +48,11 @@ def draw_seg(seg_map, image, alpha=0.5):
     return combined_img
 
 # Initialize video and ONNX session
-cap = cv2.VideoCapture("video7.mp4")
-model_path = "models/hybridnets_384x512.onnx"
+cap = cv2.VideoCapture("test_videos/video4.mp4")
+model_path = "model_data/hybridnets_384x512.onnx"
 session = onnxruntime.InferenceSession(model_path)
 
-out = cv2.VideoWriter('output.avi', cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'), 20, (1280, 720))
+out = cv2.VideoWriter('outputs/output.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 20, (1280, 720))
 cv2.namedWindow("Road Detections", cv2.WINDOW_NORMAL)
 
 frame_count = 0
@@ -75,6 +75,7 @@ while cap.isOpened():
         seg_img = draw_seg(seg_map, frame)
 
         cv2.imshow("Road Detections", seg_img)
+        seg_img = cv2.resize(seg_img, (1280, 720))
         out.write(seg_img)
 
     frame_count += 1
