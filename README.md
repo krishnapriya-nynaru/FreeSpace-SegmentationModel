@@ -53,4 +53,18 @@ For direct access, navigate to the ONNX folder in the provided repository link, 
 1. Clone this repository:
    ```bash
    git clone https://github.com/krishnapriya-nynaru/FreeSpace-SegmentationModel.git
-2. 
+2. Install required packages :
+    ```bash
+    pip install -r requirements.txt
+3. Change to Project Directory
+    ```bash
+    cd FreeSpace-SegmentationModel
+
+## Usage
+Run the script with Python
+```bash
+python hybridnet.py
+```
+
+## Results
+![alt_text](https://github.com/krishnapriya-nynaru/FreeSpace-SegmentationModel/blob/main/FreeSpace_Segmentation_Model/outputs/output.mp4)
