@@ -1,0 +1,1 @@
+This repository implements the Free Space Segmentation Model using the HybridNets multitask architecture in ONNX. It accurately segments drivable areas and free spaces, making it ideal for applications in autonomous driving, robotics, and urban planning.
